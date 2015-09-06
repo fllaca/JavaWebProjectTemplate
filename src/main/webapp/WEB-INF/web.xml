@@ -6,12 +6,30 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
          
-    <resource-ref>
-      <description>DB Connection</description>
-      <res-ref-name>jdbc/MySQLDS</res-ref-name>
-      <res-type>javax.sql.DataSource</res-type>
-      <res-auth>Container</res-auth>
-  </resource-ref>
+	<resource-ref>
+	    <description>DB Connection</description>
+	    <res-ref-name>jdbc/MySQLDS</res-ref-name>
+	    <res-type>javax.sql.DataSource</res-type>
+	    <res-auth>Container</res-auth>
+	</resource-ref>
+	
+	<servlet>
+        <servlet-name>users-servlet</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+       <param-name>contextConfigLocation</param-name>
+       <param-value>/WEB-INF/spring/app-config.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>users-servlet</servlet-name>
+        <url-pattern>/users.jsp</url-pattern>
+        <url-pattern>/users.html</url-pattern>
+        <url-pattern>*.html</url-pattern>
+    </servlet-mapping>
          
 </web-app>
 
