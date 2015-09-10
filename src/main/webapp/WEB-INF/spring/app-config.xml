@@ -8,7 +8,11 @@ http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 http://www.springframework.org/schema/context
 http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 
+    <!--  tell spring to use annotation based congfigurations -->
+	<context:annotation-config />
+	
 	<context:component-scan base-package="com.persefone.web" />
+	<context:component-scan base-package="com.persefone.repositories" />
 
 	<bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
@@ -16,5 +20,9 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+    	<property name="persistenceUnitName" value="educationPU" />
 	</bean>
 </beans>
