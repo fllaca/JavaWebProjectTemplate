@@ -22,7 +22,10 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd">
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
+	<!-- Persistence Beans -->
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
-    	<property name="persistenceUnitName" value="educationPU" />
+    	<property name="persistenceUnitName" value="jpa" />
 	</bean>
+	
+	
 </beans>
