@@ -43,7 +43,7 @@
   <!-- Use @Transaction annotations for managing transactions -->
   <tx:annotation-driven transaction-manager="myTxManager" />
  
-  <!-- View resolver OLD
+ <!-- View Resolver Classic Spring MVC (Jstl)
  <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
 		<property name="viewClass"
@@ -52,17 +52,17 @@
 		<property name="suffix" value=".jsp" />
  </bean> -->
  
- 	<bean id="velocityConfig"
-		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-		<property name="resourceLoaderPath" value="/velocity" />
+	<bean id="velocityConfig"
+	    class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+	    <property name="resourceLoaderPath" value="/WEB-INF/views/" />
 	</bean>
 	
 	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
-		<property name="cache" value="false" />
-		<property name="prefix" value="" />
-		<property name="suffix" value=".vm" />
-		<property name="exposeSpringMacroHelpers" value="true" />
+	    class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+	    <property name="cache" value="true" />
+	    <property name="prefix" value="" />
+	    <property name="layoutUrl" value="layout.vm"/>
+	    <property name="suffix" value=".vm" />
 	</bean>
  
 </beans>
