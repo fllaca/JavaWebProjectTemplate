@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>$title</title>
+        <link href="$base/stylesheets/style.css" rel="stylesheet" type="text/css">
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+            $head
+</head>
+<body>
+    <div id="pageTitle">The title: $title</div>
+    <hr/>
+    $body
+    <div id="footer">
+        Footer
+    </div>
+</body>
+</html>

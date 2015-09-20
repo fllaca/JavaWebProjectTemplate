@@ -13,6 +13,27 @@
 	    <res-auth>Container</res-auth>
 	</resource-ref>
 	
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>sitemesh-velocity</servlet-name>
+		<servlet-class>com.opensymphony.module.sitemesh.velocity.VelocityDecoratorServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>sitemesh-velocity</servlet-name>
+		<url-pattern>*.vm</url-pattern>
+	</servlet-mapping>
+	
 	<servlet>
         <servlet-name>users-servlet</servlet-name>
         <servlet-class>
@@ -21,8 +42,8 @@
         <init-param>
        <param-name>contextConfigLocation</param-name>
        <param-value>/WEB-INF/spring/app-config.xml</param-value>
-    </init-param>
-    <load-on-startup>1</load-on-startup>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>users-servlet</servlet-name>

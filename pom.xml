@@ -131,6 +131,23 @@
 			<artifactId>javassist</artifactId>
 			<version>3.12.1.GA</version>
 		</dependency>
+		
+		<!-- Sitemesh -->
+		<dependency>
+			<groupId>org.sitemesh</groupId>
+			<artifactId>sitemesh</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+		
+		<!-- Velocity -->
+		<dependency>
+			<groupId>org.apache.velocity</groupId>
+			<artifactId>velocity</artifactId>
+			<version>1.7</version>
+		</dependency>
+		
+		
+		
 	</dependencies>
 	<profiles>
 		<profile>
