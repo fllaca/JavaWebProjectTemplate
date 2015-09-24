@@ -13,6 +13,16 @@
 	    <res-auth>Container</res-auth>
 	</resource-ref>
 	
+	<filter>
+		<filter-name>sitemesh</filter-name>
+		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>sitemesh</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
 	<!-- Velocity Integration -->
 	<context-param>
 	    <param-name>contextConfigLocation</param-name>
@@ -33,6 +43,15 @@
 	    </init-param>
 	    <load-on-startup>1</load-on-startup>
     </servlet>
+	<servlet>
+		<servlet-name>sitemesh-velocity</servlet-name>
+		<servlet-class>com.opensymphony.module.sitemesh.velocity.VelocityDecoratorServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>sitemesh-velocity</servlet-name>
+		<url-pattern>*.vm</url-pattern>
+	</servlet-mapping>
     <servlet-mapping>
         <servlet-name>users-servlet</servlet-name>
         <!-- <url-pattern>/users</url-pattern>
