@@ -6,6 +6,10 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          metadata-complete="false">
          
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
+         
 	<resource-ref>
 	    <description>DB Connection</description>
 	    <res-ref-name>jdbc/MySQLDS</res-ref-name>
@@ -13,14 +17,26 @@
 	    <res-auth>Container</res-auth>
 	</resource-ref>
 	
-	<filter>
+	<!-- <filter>
 		<filter-name>sitemesh</filter-name>
-		<filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+		<filter-class>org.sitemesh.config.ConfigurableSiteMeshFilter</filter-class>
 	</filter>
 
 	<filter-mapping>
 		<filter-name>sitemesh</filter-name>
 		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+	
+	<filter>
+	  <filter-name>sitemesh</filter-name>
+	  <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
+	</filter>
+	 
+	<filter-mapping>
+	  <filter-name>sitemesh</filter-name>
+	  <url-pattern>/*</url-pattern>
+	  <dispatcher>REQUEST</dispatcher>
+	  <dispatcher>FORWARD</dispatcher>
 	</filter-mapping>
 	
 	<!-- Velocity Integration -->
@@ -43,24 +59,24 @@
 	    </init-param>
 	    <load-on-startup>1</load-on-startup>
     </servlet>
-	<servlet>
-		<servlet-name>sitemesh-velocity</servlet-name>
-		<servlet-class>com.opensymphony.module.sitemesh.velocity.VelocityDecoratorServlet</servlet-class>
-		<load-on-startup>2</load-on-startup>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>sitemesh-velocity</servlet-name>
-		<url-pattern>*.vm</url-pattern>
-	</servlet-mapping>
     <servlet-mapping>
         <servlet-name>users-servlet</servlet-name>
         <!-- <url-pattern>/users</url-pattern>
         <url-pattern>/users.html</url-pattern>
         <url-pattern>/users/helloagain</url-pattern>
-        <url-pattern>*.html</url-pattern>  -->
-        <url-pattern>/*</url-pattern>
+        <url-pattern>*.html</url-pattern> -->
+        <url-pattern>/users</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+	    <servlet-name>sitemesh-velocity</servlet-name>
+    	<servlet-class>com.opensymphony.module.sitemesh.velocity.VelocityDecoratorServlet</servlet-class>
+	</servlet>
+	 
+	<servlet-mapping>
+	    <servlet-name>sitemesh-velocity</servlet-name>
+	    <url-pattern>/*</url-pattern>
+	</servlet-mapping>
          
 </web-app>
 

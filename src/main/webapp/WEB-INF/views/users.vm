@@ -1,5 +1,14 @@
-<h2>List of Feeds</h2>
-#set($page_title = "Hello from user")
-<ul>
-    <li><a href=#>${greeting}</a></li>    
-</ul>
+<html>
+	<head>
+	<title>User list</title>
+	</head>
+    <body>
+        <h2>List of Feeds</h2>
+        #set($page_title = "Hello from user")
+        <ul>
+            <li>
+                <a href=#>${greeting}</a>
+            </li>
+        </ul>
+    </body>
+</html>

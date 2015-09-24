@@ -58,10 +58,10 @@
 	</bean>
 	
 	<bean id="viewResolver"
-	    class="org.springframework.web.servlet.view.velocity.VelocityLayoutViewResolver">
+	    class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
 	    <property name="cache" value="true" />
 	    <property name="prefix" value="" />
-	    <property name="layoutUrl" value="layout.vm"/>
+	    <!-- <property name="layoutUrl" value="layout.vm"/> -->
 	    <property name="suffix" value=".vm" />
 	</bean>
  
