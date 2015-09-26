@@ -1,0 +1,8 @@
+<<<<<<< HEAD
+# JavaWebProjectTemplate
+A skeleton of a Java Web Project, including JPA HIbernate + Spring + Velocity + Sitemesh integration
+=======
+The OpenShift `jbossews` cartridge documentation can be found at:
+
+http://openshift.github.io/documentation/oo_cartridge_guide.html#tomcat
+>>>>>>> 238a4c35e0556a5c25b5190dc032d477ffcb4c54

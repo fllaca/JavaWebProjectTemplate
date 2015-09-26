@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Persefone | $title</title>
+        
+            
+           
+</head>
+<body>
+    <div id="pageTitle">The title: $title </sitemesh:write></div>
+    <hr/>
+    
+    $body
+    <div id="footer">
+        Footer
+    </div>
+</body>
+</html>
